@@ -10,18 +10,55 @@
         <scene sceneID="csv-KZ-GQh">
             <objects>
                 <tableViewController id="eGE-bd-2cA" customClass="ListingViewControllerTableViewController" customModule="TestOLX" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="kc8-Xt-Eos">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="82" sectionHeaderHeight="28" sectionFooterHeight="28" id="kc8-Xt-Eos">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" red="0.13487360309523455" green="0.16707481839546112" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ZOY-vg-5Mq">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="itemCell" id="ZOY-vg-5Mq" customClass="ItemTableViewCell" customModule="TestOLX" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="82"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZOY-vg-5Mq" id="hUY-ig-fuR">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" horizontalHuggingPriority="750" tableViewCell="ZOY-vg-5Mq" id="hUY-ig-fuR">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="81.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" misplaced="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ap1-Xs-Nuy">
+                                            <rect key="frame" x="16" y="8" width="517" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" red="0.0" green="0.45173725328947362" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Price" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFr-Mu-3jP">
+                                            <rect key="frame" x="553" y="8" width="39" height="21"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uXa-T5-qZp">
+                                            <rect key="frame" x="16" y="41" width="576" height="32.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="wFr-Mu-3jP" firstAttribute="leading" secondItem="Ap1-Xs-Nuy" secondAttribute="trailing" constant="20" id="3H9-We-zZF"/>
+                                        <constraint firstItem="uXa-T5-qZp" firstAttribute="leading" secondItem="hUY-ig-fuR" secondAttribute="leading" constant="16" id="Akm-tk-aQe"/>
+                                        <constraint firstAttribute="trailing" secondItem="wFr-Mu-3jP" secondAttribute="trailing" constant="8" id="C6H-Ax-hAl"/>
+                                        <constraint firstItem="Ap1-Xs-Nuy" firstAttribute="leading" secondItem="hUY-ig-fuR" secondAttribute="leading" constant="16" id="NeZ-wk-5p8"/>
+                                        <constraint firstItem="uXa-T5-qZp" firstAttribute="top" secondItem="Ap1-Xs-Nuy" secondAttribute="bottom" constant="12" id="P35-u2-hrq"/>
+                                        <constraint firstItem="wFr-Mu-3jP" firstAttribute="top" secondItem="hUY-ig-fuR" secondAttribute="top" constant="8" id="UXY-7G-4Xh"/>
+                                        <constraint firstAttribute="bottom" secondItem="uXa-T5-qZp" secondAttribute="bottom" constant="8" id="VoL-Dv-yrE"/>
+                                        <constraint firstAttribute="trailing" secondItem="uXa-T5-qZp" secondAttribute="trailing" constant="8" id="qIF-Gs-VQr"/>
+                                        <constraint firstItem="Ap1-Xs-Nuy" firstAttribute="top" secondItem="hUY-ig-fuR" secondAttribute="top" constant="8" id="sec-Eb-eho"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descriptionLabel" destination="uXa-T5-qZp" id="frp-Ww-oXA"/>
+                                    <outlet property="priceLabel" destination="wFr-Mu-3jP" id="iSH-BJ-UOn"/>
+                                    <outlet property="titleLabel" destination="Ap1-Xs-Nuy" id="gAL-h8-cpU"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -52,8 +89,8 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CWK-Ic-DwJ">
-                                <rect key="frame" x="277" y="164" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="270" y="164" width="60" height="30"/>
+                                <state key="normal" title="BUSCAR"/>
                                 <connections>
                                     <segue destination="eGE-bd-2cA" kind="show" identifier="goToList" id="pyQ-SV-dqH"/>
                                 </connections>

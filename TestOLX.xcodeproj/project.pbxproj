@@ -19,6 +19,8 @@
 		751B9B711CF38BDA00755520 /* RepositoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751B9B701CF38BDA00755520 /* RepositoryManager.swift */; };
 		751B9B731CF4845800755520 /* GlobalSttings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751B9B721CF4845800755520 /* GlobalSttings.swift */; };
 		751B9B771CF4928400755520 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751B9B761CF4928400755520 /* Item.swift */; };
+		751B9B791CF4A4B400755520 /* ItemFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751B9B781CF4A4B400755520 /* ItemFactory.swift */; };
+		751B9B7C1CF4B27600755520 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751B9B7B1CF4B27600755520 /* ItemTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		751B9B701CF38BDA00755520 /* RepositoryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryManager.swift; sourceTree = "<group>"; };
 		751B9B721CF4845800755520 /* GlobalSttings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalSttings.swift; sourceTree = "<group>"; };
 		751B9B761CF4928400755520 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Item.swift; path = Repository/Models/Item.swift; sourceTree = "<group>"; };
+		751B9B781CF4A4B400755520 /* ItemFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemFactory.swift; path = Repository/Models/ItemFactory.swift; sourceTree = "<group>"; };
+		751B9B7B1CF4B27600755520 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemTableViewCell.swift; path = Presentation/ItemTableViewCell.swift; sourceTree = "<group>"; };
 		D083F7F953620693FAADDF37 /* Pods-TestOLX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestOLX.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestOLX/Pods-TestOLX.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,8 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				751B9B401CF35DEE00755520 /* AppDelegate.swift */,
-				751B9B421CF35DEE00755520 /* HomeViewController.swift */,
-				751B9B6E1CF380B100755520 /* ListingViewControllerTableViewController.swift */,
+				751B9B7A1CF4B24F00755520 /* Presentation */,
 				751B9B741CF4916B00755520 /* Repository */,
 				751B9B441CF35DEE00755520 /* Main.storyboard */,
 				751B9B471CF35DEE00755520 /* Assets.xcassets */,
@@ -164,8 +167,19 @@
 			isa = PBXGroup;
 			children = (
 				751B9B761CF4928400755520 /* Item.swift */,
+				751B9B781CF4A4B400755520 /* ItemFactory.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		751B9B7A1CF4B24F00755520 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				751B9B421CF35DEE00755520 /* HomeViewController.swift */,
+				751B9B6E1CF380B100755520 /* ListingViewControllerTableViewController.swift */,
+				751B9B7B1CF4B27600755520 /* ItemTableViewCell.swift */,
+			);
+			name = Presentation;
 			sourceTree = "<group>";
 		};
 		DDA2C4E39A0AE68F354B6E29 /* Pods */ = {
@@ -361,7 +375,9 @@
 			files = (
 				751B9B6F1CF380B100755520 /* ListingViewControllerTableViewController.swift in Sources */,
 				751B9B431CF35DEE00755520 /* HomeViewController.swift in Sources */,
+				751B9B791CF4A4B400755520 /* ItemFactory.swift in Sources */,
 				751B9B731CF4845800755520 /* GlobalSttings.swift in Sources */,
+				751B9B7C1CF4B27600755520 /* ItemTableViewCell.swift in Sources */,
 				751B9B411CF35DEE00755520 /* AppDelegate.swift in Sources */,
 				751B9B771CF4928400755520 /* Item.swift in Sources */,
 				751B9B711CF38BDA00755520 /* RepositoryManager.swift in Sources */,

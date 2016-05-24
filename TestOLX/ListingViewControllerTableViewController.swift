@@ -11,13 +11,19 @@ import UIKit
 class ListingViewControllerTableViewController: UITableViewController {
 
     var searchTerm : String!
+    var itemList : NSMutableArray = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         
-        RepositoryManager.getCardItemsWithParameters(["searchTerm":searchTerm]) { (responseList, error) in
-            
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 60
+
+        
+        RepositoryManager.getItemsWithParameters(["searchTerm":searchTerm]) { (responseList, error) in
+            self.itemList = NSMutableArray(array: responseList)
+            self.tableView.reloadData()
         }
 
     }
@@ -34,21 +40,23 @@ class ListingViewControllerTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.itemList.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("itemCell", forIndexPath: indexPath) as! ItemTableViewCell
 
         // Configure the cell...
-
+        cell.loadData(self.itemList.objectAtIndex(indexPath.row) as! Item)
+        
+        
         return cell
     }
-    */
+    
 }
