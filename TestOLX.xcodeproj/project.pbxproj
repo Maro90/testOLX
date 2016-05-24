@@ -177,9 +177,17 @@
 			children = (
 				751B9B421CF35DEE00755520 /* HomeViewController.swift */,
 				751B9B6E1CF380B100755520 /* ListingViewControllerTableViewController.swift */,
-				751B9B7B1CF4B27600755520 /* ItemTableViewCell.swift */,
+				751B9B7D1CF4E14300755520 /* Cell */,
 			);
 			name = Presentation;
+			sourceTree = "<group>";
+		};
+		751B9B7D1CF4E14300755520 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				751B9B7B1CF4B27600755520 /* ItemTableViewCell.swift */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 		DDA2C4E39A0AE68F354B6E29 /* Pods */ = {
