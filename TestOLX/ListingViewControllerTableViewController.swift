@@ -59,4 +59,27 @@ class ListingViewControllerTableViewController: UITableViewController {
         return cell
     }
     
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let alertController = UIAlertController(title: "El ítem seleccionado es", message: "\((self.itemList.objectAtIndex(indexPath.row) as! Item).getId())", preferredStyle: .Alert)
+        
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+        }
+        alertController.addAction(cancelAction)
+        
+        
+        
+        let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+        }
+        alertController.addAction(OKAction)
+        
+        
+        
+        self.presentViewController(alertController, animated: true) {
+        }
+        
+    }
+    
 }
