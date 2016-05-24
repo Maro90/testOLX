@@ -8,6 +8,18 @@
 
 import UIKit
 
-class GlobalSttings: NSObject {
+public class GlobalSttings: NSObject {
+    
+    static func getBaseURL() -> String{
+        return "http://api-v2.olx.com/"
+    }
+    
+    static func getUriItems() -> String{
+        return "items"
+    }
+
+    static func getLocationDefault() -> String{
+        return "www.olx.com.ar"
+    }
 
 }
