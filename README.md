@@ -14,3 +14,5 @@ It layer suppot errors in the json. It ignore the items without title, descripti
 In the presentation layer, it has the HomeViewController embed in a NavigationController, and when the search is performed, push a ListViewController, it is a TableViewController, it has customCell (ItemTableViewCell) and it shows the items from API.
 
 The ItemTableViewCell shows the title, the price and the description from each Item. And when is touched, it shows an alert with the ID's item.
+
+The ItemFactory catch the exceptions with invalid information in the json. The AppDebug class log those exceptions. And it was added an UnitTestingClass for this ItemFactory, it consider a few cases with invalid information and with right information, and test the result.
