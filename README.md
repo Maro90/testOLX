@@ -16,3 +16,5 @@ In the presentation layer, it has the HomeViewController embed in a NavigationCo
 The ItemTableViewCell shows the title, the price and the description from each Item. And when is touched, it shows an alert with the ID's item.
 
 The ItemFactory catch the exceptions with invalid information in the json. The AppDebug class log those exceptions. And it was added an UnitTestingClass for this ItemFactory, it consider a few cases with invalid information and with right information, and test the result.
+
+For this test, I considered title, description, id, price, displayPrice like Required Keys of all item, items without those keys will not be show it.
