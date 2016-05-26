@@ -13,7 +13,6 @@
 		751B9B461CF35DEE00755520 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 751B9B441CF35DEE00755520 /* Main.storyboard */; };
 		751B9B481CF35DEE00755520 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 751B9B471CF35DEE00755520 /* Assets.xcassets */; };
 		751B9B4B1CF35DEE00755520 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 751B9B491CF35DEE00755520 /* LaunchScreen.storyboard */; };
-		751B9B561CF35DEE00755520 /* TestOLXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751B9B551CF35DEE00755520 /* TestOLXTests.swift */; };
 		751B9B611CF35DEE00755520 /* TestOLXUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751B9B601CF35DEE00755520 /* TestOLXUITests.swift */; };
 		751B9B6F1CF380B100755520 /* ListingViewControllerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751B9B6E1CF380B100755520 /* ListingViewControllerTableViewController.swift */; };
 		751B9B711CF38BDA00755520 /* RepositoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751B9B701CF38BDA00755520 /* RepositoryManager.swift */; };
@@ -21,6 +20,11 @@
 		751B9B771CF4928400755520 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751B9B761CF4928400755520 /* Item.swift */; };
 		751B9B791CF4A4B400755520 /* ItemFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751B9B781CF4A4B400755520 /* ItemFactory.swift */; };
 		751B9B7C1CF4B27600755520 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751B9B7B1CF4B27600755520 /* ItemTableViewCell.swift */; };
+		758449E11CF65390007DECB4 /* AppDebug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C7CA521CF64EA30034D243 /* AppDebug.swift */; };
+		75C7CA4E1CF643920034D243 /* ModelFactoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C7CA4D1CF643920034D243 /* ModelFactoryTest.swift */; };
+		75C7CA4F1CF647A60034D243 /* ItemFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751B9B781CF4A4B400755520 /* ItemFactory.swift */; };
+		75C7CA501CF647A80034D243 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751B9B761CF4928400755520 /* Item.swift */; };
+		75C7CA531CF64EA30034D243 /* AppDebug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C7CA521CF64EA30034D243 /* AppDebug.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +55,6 @@
 		751B9B4A1CF35DEE00755520 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		751B9B4C1CF35DEE00755520 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		751B9B511CF35DEE00755520 /* TestOLXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestOLXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		751B9B551CF35DEE00755520 /* TestOLXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestOLXTests.swift; sourceTree = "<group>"; };
 		751B9B571CF35DEE00755520 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		751B9B5C1CF35DEE00755520 /* TestOLXUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestOLXUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		751B9B601CF35DEE00755520 /* TestOLXUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestOLXUITests.swift; sourceTree = "<group>"; };
@@ -62,6 +65,8 @@
 		751B9B761CF4928400755520 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Item.swift; path = Repository/Models/Item.swift; sourceTree = "<group>"; };
 		751B9B781CF4A4B400755520 /* ItemFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemFactory.swift; path = Repository/Models/ItemFactory.swift; sourceTree = "<group>"; };
 		751B9B7B1CF4B27600755520 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemTableViewCell.swift; path = Presentation/ItemTableViewCell.swift; sourceTree = "<group>"; };
+		75C7CA4D1CF643920034D243 /* ModelFactoryTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelFactoryTest.swift; sourceTree = "<group>"; };
+		75C7CA521CF64EA30034D243 /* AppDebug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDebug.swift; path = AppDebug/AppDebug.swift; sourceTree = "<group>"; };
 		D083F7F953620693FAADDF37 /* Pods-TestOLX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestOLX.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestOLX/Pods-TestOLX.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -125,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				751B9B401CF35DEE00755520 /* AppDelegate.swift */,
+				75C7CA511CF64E7D0034D243 /* AppDebug */,
 				751B9B7A1CF4B24F00755520 /* Presentation */,
 				751B9B741CF4916B00755520 /* Repository */,
 				751B9B441CF35DEE00755520 /* Main.storyboard */,
@@ -138,7 +144,7 @@
 		751B9B541CF35DEE00755520 /* TestOLXTests */ = {
 			isa = PBXGroup;
 			children = (
-				751B9B551CF35DEE00755520 /* TestOLXTests.swift */,
+				75C7CA4D1CF643920034D243 /* ModelFactoryTest.swift */,
 				751B9B571CF35DEE00755520 /* Info.plist */,
 			);
 			path = TestOLXTests;
@@ -188,6 +194,14 @@
 				751B9B7B1CF4B27600755520 /* ItemTableViewCell.swift */,
 			);
 			name = Cell;
+			sourceTree = "<group>";
+		};
+		75C7CA511CF64E7D0034D243 /* AppDebug */ = {
+			isa = PBXGroup;
+			children = (
+				75C7CA521CF64EA30034D243 /* AppDebug.swift */,
+			);
+			name = AppDebug;
 			sourceTree = "<group>";
 		};
 		DDA2C4E39A0AE68F354B6E29 /* Pods */ = {
@@ -389,6 +403,7 @@
 				751B9B411CF35DEE00755520 /* AppDelegate.swift in Sources */,
 				751B9B771CF4928400755520 /* Item.swift in Sources */,
 				751B9B711CF38BDA00755520 /* RepositoryManager.swift in Sources */,
+				75C7CA531CF64EA30034D243 /* AppDebug.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,7 +411,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				751B9B561CF35DEE00755520 /* TestOLXTests.swift in Sources */,
+				75C7CA501CF647A80034D243 /* Item.swift in Sources */,
+				75C7CA4E1CF643920034D243 /* ModelFactoryTest.swift in Sources */,
+				758449E11CF65390007DECB4 /* AppDebug.swift in Sources */,
+				75C7CA4F1CF647A60034D243 /* ItemFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

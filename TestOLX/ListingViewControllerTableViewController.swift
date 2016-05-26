@@ -12,6 +12,8 @@ class ListingViewControllerTableViewController: UITableViewController {
 
     var searchTerm : String!
     var itemList : NSMutableArray = []
+    var activity : UIActivityIndicatorView?
+    var loadingView : UIView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +26,9 @@ class ListingViewControllerTableViewController: UITableViewController {
         RepositoryManager.getItemsWithParameters(["searchTerm":searchTerm]) { (responseList, error) in
             self.itemList = NSMutableArray(array: responseList)
             self.tableView.reloadData()
+            self.stopLoadingAnimation()
         }
+        self.startLoadingAnimation()
 
     }
 
@@ -64,22 +68,40 @@ class ListingViewControllerTableViewController: UITableViewController {
         
         let alertController = UIAlertController(title: "El ítem seleccionado es", message: "\((self.itemList.objectAtIndex(indexPath.row) as! Item).getId())", preferredStyle: .Alert)
         
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
-        }
-        alertController.addAction(cancelAction)
-        
-        
-        
         let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
         }
         alertController.addAction(OKAction)
         
-        
-        
         self.presentViewController(alertController, animated: true) {
         }
         
+    }
+    
+    
+    
+    func startLoadingAnimation(){
+    
+        activity = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
+        activity?.frame = CGRectMake(0, 0, 75.0, 75.0)
+        
+        loadingView = UIView(frame: CGRectMake(0, 0, 75.0, 75.0))
+        loadingView?.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.75)
+        
+        loadingView?.addSubview(activity!)
+        
+        loadingView?.center = self.view.center
+        self.view.addSubview(self.loadingView!)
+
+        activity?.startAnimating()
+        
+    }
+    
+    func stopLoadingAnimation(){
+        activity?.stopAnimating()
+        activity?.removeFromSuperview()
+        activity = nil
+        loadingView?.removeFromSuperview()
+        loadingView = nil
     }
     
 }

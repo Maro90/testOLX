@@ -10,17 +10,28 @@ import UIKit
 
 public class ItemFactory: NSObject {
     
+    enum ItemFactoryError: ErrorType {
+        case ItemsWithOutData
+        case ItemWithOutData
+        case ItemWithOutTitle
+        case ItemWithOutId
+        case ItemWithOutDescription
+        case ItemWithOutPrice
+        case ItemWithOutDisplayPrice
+    }
+
+    
     public static func convert(responseBody : AnyObject?) throws -> [Item]{
         var itemList = [Item]()
         
         if responseBody == nil {
-            print("error, body nil")
+            throw AppDebug.Throw("Response body is null", error:ItemFactoryError.ItemsWithOutData)
         }
         
         if let body = responseBody as? Dictionary<String, AnyObject> {
             if let data = body["data"] as? [Dictionary<String, AnyObject>] {
                 if data.count == 0 {
-                    print("error array empty")
+                    throw AppDebug.Throw("error array empty", error:ItemFactoryError.ItemsWithOutData)
                 }
                 
                 for object in data {
@@ -30,19 +41,21 @@ public class ItemFactory: NSObject {
                             itemList.append(item!)
                         }
                     } catch {
-                        print("Exception Item")
+                        AppDebug.Log("Exception Block", info: object)
                     }
                 }
                 
             } else {
-                print("Loss in server the Data List")
+                throw AppDebug.Throw("Items List error", error:ItemFactoryError.ItemsWithOutData)
             }
         } else {
-            print("Object not valid")
+            throw AppDebug.Throw("Object not valid", error:ItemFactoryError.ItemsWithOutData)
+
         }
         
         if itemList.count == 0 {
-            print("Item List is empty")
+            throw AppDebug.Throw("Item List is empty", error:ItemFactoryError.ItemsWithOutData)
+
         }
         
         return itemList
@@ -63,25 +76,23 @@ public class ItemFactory: NSObject {
                             return Item(title: title, id: id, itemDescription: info, price: priceValue)
                             
                         } else {
-                            print("Loss in server the Price")
+                            throw AppDebug.Throw("Item without value of price", error:ItemFactoryError.ItemWithOutDisplayPrice)
                         }
                         
                     } else {
-                        print("Loss in server the Price")
+                        throw AppDebug.Throw("Item without Price", error:ItemFactoryError.ItemWithOutPrice)
                     }
                     
                 } else {
-                    print("Loss in server the Description")
+                    throw AppDebug.Throw("Item without Description", error:ItemFactoryError.ItemWithOutDescription)
                 }
                 
             } else {
-                print("Loss in server the Id")
+                throw AppDebug.Throw("Item without Id", error:ItemFactoryError.ItemWithOutId)
             }
             
         } else {
-            print("Loss in server the Title")
-        }
-        
-        return nil
+            throw AppDebug.Throw("Item without title", error:ItemFactoryError.ItemWithOutTitle)
+        }        
     }
 }

@@ -26,7 +26,7 @@ class HomeViewController: UIViewController {
         
         if segue.identifier == "goToList" {
             (segue.destinationViewController as! ListingViewControllerTableViewController).searchTerm = searchTermTextField.text
-            
+            segue.destinationViewController.navigationItem.title = searchTermTextField.text
         }
         
     }
