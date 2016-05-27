@@ -52,15 +52,13 @@ class ModelFactoryTest: XCTestCase {
      */
     
     func testParserWithOutDataKey() {
-        var arr : [Item]
         let json = ["info":[["title":"ojotas","description":"son un par de ojotas usadas","id":346234,"price":["displayPrice":"$120"]]]]
 
-        do{
-            arr = try ItemFactory.convert(json)
-            XCTAssertEqual(arr.count,0, "Must have 0")
-        } catch {
-            XCTAssert(true, "It should catch")
+        
+        XCTAssertThrowsError(try ItemFactory.convert(json), "wrong data") { (error) in
+            XCTAssertEqual(error as? ItemFactory.ItemFactoryError, ItemFactory.ItemFactoryError.ItemsWithOutData)
         }
+
     }
     
     //---------------------------------------------------------------------------------------------------------------------
@@ -92,11 +90,8 @@ class ModelFactoryTest: XCTestCase {
     func testParserArrayEmpty() {
         let json = ["data":[]]
         
-        do{
-            try ItemFactory.convert(json)
-            
-        } catch {
-            XCTAssert(true, "It should catch")
+        XCTAssertThrowsError(try ItemFactory.convert(json), "wrong data") { (error) in
+            XCTAssertEqual(error as? ItemFactory.ItemFactoryError, ItemFactory.ItemFactoryError.ItemsWithOutData)
         }
     }
 
@@ -118,11 +113,8 @@ class ModelFactoryTest: XCTestCase {
         
         let json = ["description":"son un par de ojotas usadas","id":346234,"price":["displayPrice":"$120"]]
         
-        do{
-            try ItemFactory.createItem(json)
-            
-        } catch {
-            XCTAssert(true, "It should catch")
+        XCTAssertThrowsError(try ItemFactory.createItem(json), "wrong title") { (error) in
+            XCTAssertEqual(error as? ItemFactory.ItemFactoryError, ItemFactory.ItemFactoryError.ItemWithOutTitle)
         }
     }
 
@@ -136,11 +128,8 @@ class ModelFactoryTest: XCTestCase {
     func testParserWithOutDescriptionKey() {
         
         let json = ["title":"ojotas","descripSion":"son un par de ojotas usadas","id":346234,"price":["displayPrice":"$120"]]
-        do{
-            try ItemFactory.createItem(json)
-            
-        } catch {
-            XCTAssert(true, "It should catch")
+        XCTAssertThrowsError(try ItemFactory.createItem(json), "wrong description") { (error) in
+            XCTAssertEqual(error as? ItemFactory.ItemFactoryError, ItemFactory.ItemFactoryError.ItemWithOutDescription)
         }
     }
     
@@ -155,11 +144,8 @@ class ModelFactoryTest: XCTestCase {
         
         let json = ["title":"ojotas","description":"son un par de ojotas usadas","udid":346234,"price":["displayPrice":"$120"]]
         
-        do{
-            try ItemFactory.createItem(json)
-            
-        } catch {
-            XCTAssert(true, "It should catch")
+        XCTAssertThrowsError(try ItemFactory.createItem(json), "wrong data") { (error) in
+            XCTAssertEqual(error as? ItemFactory.ItemFactoryError, ItemFactory.ItemFactoryError.ItemWithOutId)
         }
     }
 
@@ -174,11 +160,8 @@ class ModelFactoryTest: XCTestCase {
         
         let json = ["title":"ojotas","description":"son un par de ojotas usadas","id":346234,"precio":["displayPrice":"$120"]]
         
-        do{
-            try ItemFactory.createItem(json)
-            
-        } catch {
-            XCTAssert(true, "It should catch")
+        XCTAssertThrowsError(try ItemFactory.createItem(json), "wrong data") { (error) in
+            XCTAssertEqual(error as? ItemFactory.ItemFactoryError, ItemFactory.ItemFactoryError.ItemWithOutPrice)
         }
     }
     
@@ -191,13 +174,10 @@ class ModelFactoryTest: XCTestCase {
 
     func testParserWithOutDisplaPriceKey() {
         
-        let json = ["title":"ojotas","description":"son un par de ojotas usadas","id":346234,"price":"0"]
+        let json = ["title":"ojotas","description":"son un par de ojotas usadas","id":346234,"price":["value":"120"]]
         
-        do{
-            try ItemFactory.createItem(json)
-            
-        } catch {
-            XCTAssert(true, "It should catch")
+        XCTAssertThrowsError(try ItemFactory.createItem(json), "wrong data") { (error) in
+            XCTAssertEqual(error as? ItemFactory.ItemFactoryError, ItemFactory.ItemFactoryError.ItemWithOutDisplayPrice)
         }
     }
 }
